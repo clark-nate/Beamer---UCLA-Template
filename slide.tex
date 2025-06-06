@@ -1,0 +1,193 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A Beamer template for UCLA                         %
+% Based on THU beamer theme by Yuxuan HU             %
+% Updated to match UCLA style guides                 %
+% Author: Nate Clark                                 %
+% Date: May 2025                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[serif, aspectratio=169]{beamer}
+\usepackage{UCLAstyle}
+
+\usepackage{hyperref}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{lipsum}
+\usepackage{csquotes}
+
+\usepackage[
+style=apa,
+url=false]{biblatex} 
+% 'backend=biber' is the default
+\addbibresource{bibliography.bib}
+
+% Add possessive for in-text citations
+\DeclareNameWrapperFormat{labelname:poss}{#1's}
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameWrapperAlias{labelname}{labelname:poss}}}
+\newrobustcmd*{\posscite}{%
+  \posscitealias
+  \textcite}
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+\newrobustcmd*{\posscites}{%
+  \posscitealias
+  \textcites}
+
+% Force citation color to black (biblatex uses internal colors like citecolor, urlcolor, filecolor)
+\definecolor{bibblack}{RGB}{0,0,0}
+\AtBeginBibliography{\color{bibblack}}
+% Title Info
+\author{Author Name}
+\title{Main Title}
+\subtitle{Subtitle}
+\institute{
+   University of California, Los Angeles \\
+   Course or Conference
+}
+\date{\small \today}
+
+% Brand-aligned listing colors
+\definecolor{uclablue}{RGB}{39,116,174}
+\definecolor{uclagold}{RGB}{255,209,0}
+\definecolor{lightgrey}{RGB}{228,228,228}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{uclablue},
+    emphstyle=\ttfamily\color{uclagold},
+    stringstyle=\color{black},
+    numbers=left,
+    numberstyle=\small\color{lightgrey},
+    rulesepcolor=\color{uclablue},
+    frame=shadowbox,
+}
+
+% Override Beamer's citation and bibliography colors
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+\setbeamercolor{bibliography entry journal}{fg=black}
+\setbeamercolor{bibliography entry date}{fg=black}
+\setbeamercolor{bibliography entry}{fg=black}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \vspace*{-0.6cm}
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[keepaspectratio, scale=0.1]{pic/ucla-logo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}    
+\tableofcontents[sectionstyle=show,
+subsectionstyle=show/shaded/hide,
+subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+% Introduction --- --- --- --- --- --- --- --- --- --- --- --- 
+
+\section{Introduction}
+\begin{frame}{Background and Motivation}
+	\frametitle<presentation>{Background and Motivation}
+	\begin{block}{Why to give a presentation:}
+		\begin{itemize}
+			\item show the main arguments and results of your work
+			\item produce interest to read the full paper/report
+			\item goal: be educational and also entertaining
+		\end{itemize}
+	\end{block}
+	\begin{block}{Advantages of using \LaTeX ~with the beamer package:}
+		\begin{itemize}
+			\item very easy if the report is already written in \LaTeX
+			\item different themes which are usable in practice
+			\item possibility to create handouts using \emph{beamerarticle}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Research question}
+
+   this is a Research question.
+
+\end{frame}
+
+% Literature Review --- --- --- --- --- --- --- --- --- --- --- 
+\section{Literature Review}
+\begin{frame}{Research gap}
+
+   \textcite{Gentzkow.Shapiro_2008} habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nibh sapien, pulvinar et quam ac, auctor euismod orci. \\[1em]
+   
+   \enquote{Aliquam suscipit imperdiet tincidunt} \parencite{Gentzkow.Shapiro_2008}.
+   
+
+\end{frame}
+
+\begin{frame}{Research question}
+
+   This is a Research Question.
+
+\end{frame}
+
+% Methods --- --- --- --- --- --- --- --- --- --- --- 
+\section{Methods}
+\begin{frame}{Title}
+    \begin{itemize}
+        \item different themes which are usable in practice
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle<presentation>{Figures}
+	\begin{figure}
+		\centering
+			\includegraphics[height=5cm]{pic/ucla-logo.png}
+		\caption{Logo of the university.}
+		\label{fig:unilogo}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Title}
+   \begin{block}{Data \& Methods}
+		\begin{itemize}
+			\item \textbf{MEASURE:} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae viverra enim. Donec pulvinar, ante eget facilisis rutrum, ante eros cursus quam, at tempor risus lectus sit amet mi:
+                \begin{enumerate}
+                    \item variable 1,
+                    \item variable 2
+                    \item variable 3
+                \end{enumerate}
+                \item \enquote{Etiam at urna nisl. Nullam quis molestie urna. In hac habitasse platea dictumst.}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+% Results --- --- --- --- --- --- --- --- --- --- --- 
+\section{Results}
+\begin{frame}
+    \begin{itemize}
+        \item different themes
+        \item different themes
+        \item different themes
+        \item different themes
+    \end{itemize}
+\end{frame}
+
+
+% --- Thank you slide ---
+\begin{frame}
+\begin{center}
+{ Thank you for listening !}
+\vspace{1cm}
+
+Your Name \\[1em]
+email@ucla.edu 
+\end{center}
+\end{frame}
+
+\end{document}
